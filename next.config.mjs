@@ -3,7 +3,16 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['api.risloo.ir','ui-avatars.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.risloo.ir',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ui-avatars.com',
+      },
+    ],
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
