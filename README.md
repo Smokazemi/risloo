@@ -4,6 +4,25 @@ A Next.js-based counseling center management system.
 
 ## Prerequisites
 
+- Docker Desktop for Mac
+- Docker Compose
+
+## Docker Deployment
+
+### Production Deployment
+
+1. Build and start all services:
+```bash
+# Build the Docker images
+docker compose build
+
+# Start the services in detached mode
+docker compose up -d
+
+# Main application: http://localhost:3000
+# Storybook: http://localhost:6006
+```
+
 - Node.js 18.x or higher
 - npm 9.x or higher
 

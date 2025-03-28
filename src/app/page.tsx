@@ -1,9 +1,5 @@
 import CentersPage from "@/components/templates/CentersPage";
-import Image from "next/image";
 import data from '@/data/data.json';
-import SEO from "@/components/atoms/SEO";
-import Head from "next/head";
-import meta from "@/components/atoms/Avatar.stories";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

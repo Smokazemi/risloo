@@ -1,5 +1,5 @@
 'use client'
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import CenterCard from '../organisms/CenterCard'
 import Container from '../atoms/Container'
@@ -33,7 +33,7 @@ interface CentersPageProps {
 const ITEMS_PER_PAGE = 10
 const LOAD_DELAY_MS = 500
 
-const CentersPage = ({ centers }: CentersPageProps) => {
+const CentersContent = ({ centers }: CentersPageProps) => {
     const router = useRouter()
     const searchParams = useSearchParams()
     const [isLoading, setIsLoading] = useState(false)
@@ -118,6 +118,20 @@ const CentersPage = ({ centers }: CentersPageProps) => {
                 )}
             </Container>
         </main>
+    )
+}
+
+const CentersPage = ({ centers }: CentersPageProps) => {
+    return (
+        <Suspense fallback={
+            <Container className="py-8">
+                <div className="h-20 flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900" />
+                </div>
+            </Container>
+        }>
+            <CentersContent centers={centers} />
+        </Suspense>
     )
 }
 

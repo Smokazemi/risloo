@@ -1,7 +1,11 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { createRequire } from 'module'
+
+const require = createRequire(import.meta.url)
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   images: {
     remotePatterns: [
       {
@@ -23,8 +27,20 @@ const nextConfig = {
         })
       )
     }
+
+    config.resolve = {
+      ...config.resolve,
+      fallback: {
+        ...config.resolve.fallback,
+        'ajv': require.resolve('ajv'),
+      }
+    }
+
     return config
   },
+  experimental: {
+    esmExternals: true
+  }
 }
 
 export default nextConfig
