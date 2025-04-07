@@ -9,7 +9,6 @@ import { useStructuredData } from '@/hooks/useStructuredData'
 import LoadingSpinner from '@/components/atoms/LoadingSpinner'
 import { useCentersData } from '@/hooks/useCentersData'
 import PaginationHead from '../atoms/PaginationHead'
-import Link from 'next/link'
 import Grid from '@/components/atoms/Grid'
 
 interface CentersContentProps {
