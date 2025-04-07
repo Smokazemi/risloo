@@ -36,7 +36,7 @@ type Story = StoryObj<typeof Avatar>
 
 export const Default: Story = {
   args: {
-    image: 'https://via.placeholder.com/40',
+    image: 'https://api.risloo.ir/storage/public/Files_1000/P9666MYF_large.png',
     title: 'Default Avatar',
     rounded: 'none',
     width: 40,

@@ -3,7 +3,8 @@ import "./globals.css";
 import { iransans } from '@/assets/fonts/fonts'
 
 export const metadata: Metadata = {
-  
+  title: 'ریسلو',
+  description: 'ریسلو'
 };
 
 export default function RootLayout({
