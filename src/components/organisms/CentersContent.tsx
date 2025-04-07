@@ -81,13 +81,6 @@ export default function CentersContent({ initialCenters, initialIndex, initialPa
                 prevIndex={initialPagination.prevIndex}
             />
             <Container className="py-8">
-                <nav aria-label="breadcrumb" className="mb-4">
-                    <ol className="flex items-center space-x-2 text-sm text-gray-600" dir="ltr">
-                        <li><Link href="/">ریسلو</Link></li>
-                        <li>/</li>
-                        <li aria-current="page">مراکز مشاوره</li>
-                    </ol>
-                </nav>
 
                 <header className="mb-8">
                     <h1 className="text-3xl font-bold text-gray-900 mb-2">لیست مراکز مشاوره</h1>
